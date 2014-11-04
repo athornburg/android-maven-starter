@@ -1,0 +1,36 @@
+buildscript {
+	repositories {
+		mavenLocal()
+		mavenCentral()
+	}
+	dependencies {
+		classpath 'com.android.tools.build:gradle:0.5+'
+	}
+}
+
+apply plugin: 'android'
+
+dependencies {
+	compile group: 'com.android.support', name: 'support-v4', version: '19.0.+'
+}
+
+android {
+	compileSdkVersion 19
+	buildToolsVersion '19.0.1'
+
+	defaultConfig {
+		versionCode 1
+		versionName '0.1'
+		minSdkVersion 10
+		targetSdkVersion 19
+	}
+	sourceSets {
+		main {
+			manifest.srcFile 'AndroidManifest.xml'
+			java.srcDirs = ['src/main/java']
+			resources.srcDirs = ['src/main/resources']
+			res.srcDirs = ['res']
+			assets.srcDirs = ['assets']
+		}
+	}
+}
